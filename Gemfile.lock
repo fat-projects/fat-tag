@@ -1,13 +1,18 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.8)
     backports (3.6.4)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    minitest (5.4.3)
     multi_json (1.11.0)
     rack (1.6.1)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    safe_yaml (1.0.4)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -22,11 +27,16 @@ GEM
     sinatra-reloader (1.0)
       sinatra-contrib
     tilt (1.4.1)
+    webmock (1.21.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  minitest
   sinatra
   sinatra-contrib
   sinatra-reloader
+  webmock

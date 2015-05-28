@@ -15,8 +15,10 @@ module FatTag
       set_request_path
 
       response = http.request(request.call)
-      puts response.body
+      response
     end
+
+    private
 
     def uri
       @uri ||= URI.parse("https://api.github.com/repos/jakef/#{repo}/releases")

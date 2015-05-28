@@ -11,6 +11,8 @@ module FatTag
       set_request_options
       request
     end
+    
+    private 
 
     def request
       @request ||= Net::HTTP::Post.new(path, {'Content-Type' =>'application/json'})

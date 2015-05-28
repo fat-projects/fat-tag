@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require './lib/fat_tag'
+require_relative '../../lib/fat_tag.rb'
 
 configure :development do
   enable :reloader
@@ -11,11 +11,11 @@ get '/' do
 end
 
 post '/api/:commit_sha' do
-  FatTag.post(params[:commit_sha], 'stintra-test')
+  response = FatTag.post(params[:commit_sha], 'stintra-test')
+  status 201
 end
 
-post '/foo' do
-  puts 'hello shitty app'
-end
-
-# 8cf066a60f9e4cb733a05da7fee3f34a4433a434
+# Source Control
+# Write Tests
+# * Unit Test
+# * Integrated Test
