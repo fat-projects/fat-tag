@@ -3,16 +3,19 @@ module FatTag
     def username
       config['basic']['username']
     end
+
     def password
       config['basic']['password']
     end
 
-    def config
-      YAML.load_file(filepath)
+    def filepath(path = '/config/github_auth.yml')
+      @filepath ||= SINATRA_ROOT + path
     end
 
-    def filepath
-      SINATRA_ROOT + '/config/github_auth.yml'
-    end
+    private
+
+    def config
+      YAML.load_file(filepath)
+    end 
   end
 end

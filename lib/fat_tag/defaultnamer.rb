@@ -4,6 +4,8 @@ module FatTag
       time.strftime("%Y%m%d-%H%M")
     end
 
+    private
+
     def time
       Time.now
     end
