@@ -10,9 +10,9 @@ get '/' do
   'Hello Fucking world'
 end
 
-post '/api/:commit_sha' do
-  response = FatTag.post(params[:commit_sha], 'stintra-test')
-  status 201
+post '/:organization/:repo/:commit_sha' do
+  response = FatTag.post(params[:organization], params[:repo], params[:commit_sha])
+  puts response.body
 end
 
 # Source Control

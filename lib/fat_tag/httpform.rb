@@ -1,8 +1,10 @@
 module FatTag
   class HttpForm
-    attr_accessor :request, :repo
+    attr_accessor :request, :organization, :repo
+
     def initialize(args)
       @request = args[:request]
+      @organization = args[:organization]
       @repo = args[:repo]
     end
 
@@ -21,7 +23,7 @@ module FatTag
     private
 
     def uri
-      @uri ||= URI.parse("https://api.github.com/repos/jakef/#{repo}/releases")
+      @uri ||= URI.parse("https://api.github.com/repos/#{organization}/#{repo}/releases")
     end
 
     def http
