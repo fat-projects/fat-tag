@@ -16,7 +16,7 @@ module FatTag
         "tag_name" => tagname,
         "target_commitish" => target_commitish,
         "name" => tagname,
-        "body" => "You are not an idiot.",
+        "body" => "",
         "draft" => false,
         "prerelease" => false
       }

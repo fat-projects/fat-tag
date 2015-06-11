@@ -34,7 +34,7 @@ end
 describe 'httpform' do
   let(:post_data) { FatTag::ReleaseData.call(target_commitish: '1234566789') }
   let(:post_request) { FatTag::PostRequest.new(data: post_data) }
-  let(:http_form) { FatTag::HttpForm.new(request: post_request, repo: 'foo') }
+  let(:http_form) { FatTag::HttpForm.new(request: post_request, organization: 'bar', repo: 'foo') }
 
   it 'successfully posts a request to the github api' do 
     response = http_form.call

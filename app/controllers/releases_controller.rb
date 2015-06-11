@@ -10,8 +10,8 @@ get '/' do
   'Hello Fucking world'
 end
 
-post '/api/:commit_sha' do
-  response = FatTag.post(params[:commit_sha], 'stintra-test')
+post '/:organization/:repo/:commit_sha' do
+  response = FatTag.post(params[:organization], params[:repo], params[:commit_sha])
   status 201
 end
 
@@ -19,3 +19,4 @@ end
 # Write Tests
 # * Unit Test
 # * Integrated Test
+# Setup ruby logging to include response body
